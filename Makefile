@@ -22,15 +22,18 @@ CFLAGS = -Wall -Wextra -Werror
 UNAME_S := $(shell uname -s)
 
 ifeq ($(UNAME_S),Linux)
-	MLX = -L/usr/local/lib -lmlx -lXext -lX11 -lm -lbsd
+	MLX = -L./mlx -lmlx -L/usr/local/lib -lXext -lX11 -lm -lbsd
 endif
 ifeq ($(UNAME_S),Darwin)
-	MLX = -L/usr/local/lib -Imlx -lmlx -framework OpenGL -framework AppKit
+	MLX = -L./mlx -lmlx -L/usr/local/lib -Imlx -framework OpenGL -framework AppKit
 endif
 
-all: libft $(NAME)
+all: mlx libft $(NAME)
 
-bonus: libft $(BONUS_NAME)
+bonus: mlx libft $(BONUS_NAME)
+
+mlx:
+	make -C mlx
 
 libft:
 	make -C libft
@@ -44,14 +47,17 @@ $(BONUS_NAME): $(BONUS_OBJ)
 clean:
 	rm -f $(OBJ) $(BONUS_OBJ)
 	make clean -C libft
+	make clean -C mlx
 
 fclean: clean
 	rm -f $(NAME) $(BONUS_NAME)
 	make fclean -C libft
+	make clean -C mlx
 
 re: fclean all
 
 leaks:
 	valgrind --leak-check=full ./$(NAME) ./maps/map_1.ber
 
-.PHONY: all clean fclean re libft leaks bonus
+.PHONY: all clean fclean re libft leaks bonus mlx
+
