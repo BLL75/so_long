@@ -6,7 +6,7 @@
 /*   By: bluque-l <bluque-l@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 11:59:54 by bluque-l          #+#    #+#             */
-/*   Updated: 2023/08/21 01:19:28 by bluque-l         ###   ########.fr       */
+/*   Updated: 2023/08/23 00:30:54 by bluque-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ void	display_move_count(t_vars *vars)
 
 	move_count_str = ft_itoa(vars->game_map->move_count);
 	mlx_string_put(vars->mlx_ptr, vars->win_ptr, 20,
-		20, 0x00FF00, "Numbre moves: ");
+		20, 0x000000, "Numbre moves: ");
 	mlx_string_put(vars->mlx_ptr, vars->win_ptr, 150,
-		20, 0x00FF00, move_count_str);
+		20, 0x000000, move_count_str);
 	free(move_count_str);
 }
 
