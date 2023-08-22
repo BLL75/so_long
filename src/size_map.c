@@ -6,7 +6,7 @@
 /*   By: bluque-l <bluque-l@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 13:09:26 by bluque-l          #+#    #+#             */
-/*   Updated: 2023/08/20 23:59:21 by bluque-l         ###   ########.fr       */
+/*   Updated: 2023/08/22 23:02:47 by bluque-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,8 @@ void	measure_map_size(const char *map_file, int *map_width, int *map_height)
 	height = 0;
 	if (fd < 0)
 	{
-		write(2, "Error opening map file\n", 23);
+		write(1, "Error:\n", 6);
+		write(1, "Opening map file\n", 17);
 		return ;
 	}
 	line = get_next_line(fd);

@@ -6,7 +6,7 @@
 /*   By: bluque-l <bluque-l@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 20:33:44 by bluque-l          #+#    #+#             */
-/*   Updated: 2023/08/19 20:13:54 by bluque-l         ###   ########.fr       */
+/*   Updated: 2023/08/23 00:20:27 by bluque-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 
 void	move_character_right(t_vars *vars)
 {
-	move_character(vars, 1, 0, 5);
+	move_character(vars, 1, 0);
 }
 
 void	move_character_left(t_vars *vars)
 {
-	move_character(vars, -1, 0, 5);
+	move_character(vars, -1, 0);
 }
 
 void	move_character_up(t_vars *vars)
 {
-	move_character(vars, 0, -1, 5);
+	move_character(vars, 0, -1);
 }
 
 void	move_character_down(t_vars *vars)
 {
-	move_character(vars, 0, 1, 4);
+	move_character(vars, 0, 1);
 }

@@ -6,7 +6,7 @@
 /*   By: bluque-l <bluque-l@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 11:59:59 by bluque-l          #+#    #+#             */
-/*   Updated: 2023/08/20 23:56:35 by bluque-l         ###   ########.fr       */
+/*   Updated: 2023/08/22 23:01:44 by bluque-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,8 @@ void	create_and_insert_node(t_vars *vars,
 	new_node = (t_map_element_node *)malloc(sizeof(t_map_element_node));
 	if (new_node == NULL)
 	{
-		write(2, "Error allocating memory\n", 24);
+		write(1, "Error:\n", 6);
+		write(1, "Error allocating memory\n", 24);
 		exit(EXIT_FAILURE);
 	}
 	initialize_new_node(new_node, element, x, y);

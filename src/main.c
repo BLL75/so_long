@@ -6,7 +6,7 @@
 /*   By: bluque-l <bluque-l@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 11:59:54 by bluque-l          #+#    #+#             */
-/*   Updated: 2023/08/20 23:55:37 by bluque-l         ###   ########.fr       */
+/*   Updated: 2023/08/22 23:01:01 by bluque-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int	initialize_game(t_vars *vars, char *map_file, char *title)
 	vars->game_map->elements = load_map_from_file(map_file, vars);
 	if (vars->game_map->elements == NULL)
 	{
-		write(2, "Error: Failed to load map from file.\n", 37);
+		write(1, "Error:\n", 6);
+		write(1, "Failed to load map from file.\n", 30);
 		return (1);
 	}
 	*vars->game_map = init_map(vars->game_map->elements,

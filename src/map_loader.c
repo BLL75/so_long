@@ -6,7 +6,7 @@
 /*   By: bluque-l <bluque-l@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 22:09:33 by bluque-l          #+#    #+#             */
-/*   Updated: 2023/08/20 23:56:03 by bluque-l         ###   ########.fr       */
+/*   Updated: 2023/08/22 23:01:30 by bluque-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,8 @@ t_map_element_node	*load_map_from_file(const char *map_file, t_vars *vars)
 	fd = open(map_file, O_RDONLY);
 	if (fd < 0)
 	{
-		write(2, "Error opening map file\n", 23);
+		write(1, "Error:\n", 6);
+		write(1, "Opening map file\n", 17);
 		return (NULL);
 	}
 	process_map_file(fd, vars);

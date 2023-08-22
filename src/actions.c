@@ -6,7 +6,7 @@
 /*   By: bluque-l <bluque-l@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 12:06:42 by bluque-l          #+#    #+#             */
-/*   Updated: 2023/08/20 23:50:44 by bluque-l         ###   ########.fr       */
+/*   Updated: 2023/08/22 23:38:16 by bluque-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ void	validate_map_character(char character)
 {
 	if (!is_valid_character(character))
 	{
-		write(1, "Error: Carácter no válido\n", 26);
+		write(1, "Error\n", 6);
+		write(1, "Carácter no válido\n", 26);
 		exit(EXIT_FAILURE);
 	}
 }

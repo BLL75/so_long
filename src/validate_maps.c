@@ -6,7 +6,7 @@
 /*   By: bluque-l <bluque-l@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 12:25:36 by bluque-l          #+#    #+#             */
-/*   Updated: 2023/08/21 00:05:37 by bluque-l         ###   ########.fr       */
+/*   Updated: 2023/08/22 23:06:39 by bluque-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,8 @@ int	validate_walls(t_vars *vars)
 {
 	if (!validate_rows(vars) || !validate_columns(vars))
 	{
-		write(2, "Error: El mapa debe estar rodeado de paredes.\n", 46);
+		write(1, "Error:\n", 6);
+		write(1, "The map must be surrounded by walls\n", 36);
 		return (0);
 	}
 	return (1);
@@ -100,7 +101,8 @@ int	validate_player_and_exit(t_vars *vars)
 	}
 	if (player_count != 1 || exit_count != 1)
 	{
-		write(1, "Error: Número erróneo de P y E.\n", 33);
+		write(1, "Error\n", 6);
+		write(1, "Only 1 P and 1 E\n", 17);
 		return (0);
 	}
 	return (1);
@@ -110,17 +112,20 @@ int	validate_map(t_vars *vars)
 {
 	if (!validate_player_and_exit(vars))
 	{
-		write(2, "Error: Min 1 player - 1 exit.\n", 30);
+		write(1, "Error\n", 6);
+		write(1, "Min 1 player - 1 exit.\n", 23);
 		exit(EXIT_FAILURE);
 	}
 	if (!validate_walls(vars))
 	{
-		write(2, "Error: Map not surrounded by walls\n", 35);
+		write(1, "Error\n", 6);
+		write(1, "Map not surrounded by walls\n", 28);
 		exit(EXIT_FAILURE);
 	}
 	if (!is_accessible(vars))
 	{
-		write(2, "Accessibility error in object or exit.\n", 39);
+		write(1, "Error\n", 6);
+		write(1, "Accessibility error in object or exit.\n", 39);
 		exit(EXIT_FAILURE);
 	}
 	return (1);

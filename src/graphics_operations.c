@@ -6,7 +6,7 @@
 /*   By: bluque-l <bluque-l@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 09:07:28 by bluque-l          #+#    #+#             */
-/*   Updated: 2023/08/20 23:53:16 by bluque-l         ###   ########.fr       */
+/*   Updated: 2023/08/23 00:15:30 by bluque-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,7 @@ void	load_images(t_images images[], void *mlx_ptr, int *width, int *height)
 			"./textures/helicopter.xpm", width, height)};
 	images[4] = (t_images){'P', mlx_xpm_file_to_image(mlx_ptr,
 			"./textures/player.xpm", width, height)};
-	images[5] = (t_images){'P', mlx_xpm_file_to_image(mlx_ptr,
-			"./textures/player_left.xpm", width, height)};
-	images[6] = (t_images){0, NULL};
+	images[5] = (t_images){0, NULL};
 	check_images_load(images, mlx_ptr);
 }
 
