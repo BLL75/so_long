@@ -6,7 +6,7 @@
 /*   By: bluque-l <bluque-l@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 17:54:26 by bluque-l          #+#    #+#             */
-/*   Updated: 2023/08/22 11:20:14 by bluque-l         ###   ########.fr       */
+/*   Updated: 2023/08/23 00:20:10 by bluque-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,10 +107,9 @@ void				move_character_up(t_vars *vars); // moves_utils.c
 void				move_character_down(t_vars *vars); // moves_utils.c
 void				move_character_right(t_vars *vars); // moves_utils.c
 void				move_character_left(t_vars *vars); // moves_utils.c
-void				move_character(t_vars *vars, int dx, int dy,
-						int image_index);
+void				move_character(t_vars *vars, int dx, int dy);
 void				handle_move(t_vars *vars, t_map_element_node *player_node,
-						t_map_element_node *destination_node, int image_index);
+						t_map_element_node *destination_node);
 void				perform_right_move(t_vars *vars);
 void				perform_left_move(t_vars *vars);
 void				perform_up_move(t_vars *vars);
