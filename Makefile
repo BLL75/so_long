@@ -22,10 +22,10 @@ CFLAGS = -Wall -Wextra -Werror
 UNAME_S := $(shell uname -s)
 
 ifeq ($(UNAME_S),Linux)
-	MLX = -L./mlx -lmlx -L/usr/local/lib -lXext -lX11 -lm -lbsd
+	MLX = -L./mlx -lmlx -lXext -lX11 -lm -lbsd
 endif
 ifeq ($(UNAME_S),Darwin)
-	MLX = -L./mlx -lmlx -L/usr/local/lib -Imlx -framework OpenGL -framework AppKit
+	MLX = -L./mlx -lmlx -I./mlx -framework OpenGL -framework AppKit
 endif
 
 all: mlx libft $(NAME)
